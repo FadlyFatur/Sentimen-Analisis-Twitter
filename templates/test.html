@@ -1,0 +1,90 @@
+{% extends 'base.html'%}
+
+{% block head%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/test.css') }}">
+
+<title>Sentimen Analysis Project</title>
+{% endblock%}
+
+{% block body%}
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid"> <button class="navbar-toggler navbar-toggler-right border-0 p-0" type="button"
+            data-toggle="collapse" data-target="#navbar20">
+            <p class="navbar-brand text-white mb-0"> <i class="fa d-inline fa-lg fa-stop-circle"></i> BBBOOTSTRAP </p>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar20">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"> <a class="nav-link" href="{{ url_for('index') }}">Beranda</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url_for('test') }}">Sentimen Analisis</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url_for('sosmed') }}">Sosial Media Sentimen</a> </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid mr-3 ml-3">
+    <div class="content-card">
+        <div class="content-a">
+            <h1>Sentiment Analisis Check</h1>
+            <div class="row">
+                <div class="col-6">
+                    <form action="{{ url_for('test') }}" method="post">
+                        <label for="sentimen">Masukan Teks</label>
+                        <input type="text" name="sentimen" class="form-control" id="sentimen" style="width: 650px;"
+                            required>
+                        <label for="model">Pilih Model</label>
+                        <select name="model" id="mdl" class="form-control" style="width: 100px;">
+                            <option value="1">GRU</option>
+                            <option value="2">BiGRU</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                    </form>
+                </div>
+                <div class="col-6 sub-content-b">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Text</th>
+                                <th scope="col">Model</th>
+                                <th scope="col">Sentimen</th>
+                                <th scope="col">Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>{{ text }}</th>
+                                {%if model is defined%}
+                                {% if model == '1' %}
+                                <th>GRU</th>
+                                {%else%}
+                                <th>BiGRU</th>
+                                {%endif%}
+                                {%endif%}
+                                <th>{{ label }}</th>
+                                <td>{{ score }}</td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="emot-face">
+                        {% if label is defined%}
+                        {% if label == "Positif" %}
+                        <img src="{{ url_for('static', filename='img/smile.png') }}" alt="smile"
+                            class="img-1 animate__animated animate__fadeInDown">
+                        {% else %}
+                        <img src="{{ url_for('static', filename='img/sad.png') }}" alt="sad"
+                            class="img-2 animate__animated animate__fadeInDown">
+                        {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock%}
+
+{% block js%}
+
+{% endblock%}

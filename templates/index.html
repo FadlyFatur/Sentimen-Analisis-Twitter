@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+
+{% block head%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+
+<title>Sentimen Analysis Project</title>
+{% endblock%}
+
+{% block body%}
+<div class="content m-5 pt-5 pb-5 d-flex align-items-center">
+    <div class="row gx-1 mx-auto">
+        <div class="col-md-6">
+            <h1 class="animate__animated animate__fadeInDown"><b>Sentimen Analisis</b></h1>
+            <h2>Fadly Faturrohman - 152017076</h2>
+            <p class="animate__animated animate__fadeInUp">Program Testing berbasis web untuk melakukan analisis
+                sentimen dari
+                sebuah teks dengan menggunakan metode deep learning - Gated Recurrent Unit (GRU) dari penelitian dengan
+                judul Analisis Sentimen menggunakan metode gated recurrent unit </p>
+            <hr>
+            <a href="{{ url_for('test') }}" class="btn btn-primary btn-try">Coba Sekarang</a>
+        </div>
+        <div class="col-md-6">
+            <img class="img mx-auto d-block" src="{{ url_for('static', filename='img/Chat_PNG.png') }}"></img>
+        </div>
+    </div>
+</div>
+{% endblock%}

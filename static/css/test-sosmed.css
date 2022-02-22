@@ -1,0 +1,75 @@
+body {
+    background: #edf6f9;
+}
+
+.menu-test {
+    display: flex;
+    justify-content: center;
+}
+
+.card-box {
+    background-color: #ffddd2;
+    /* border: black 1px solid; */
+    /* padding: 8px; */
+    border-radius: 8px;
+    max-width: 50%;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-right: 5rem; */
+    /* float: left; */
+}
+
+.card-box a h5 {
+    color: black;
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.card-box a {
+    text-decoration: none;
+}
+
+.box-input-form {
+    max-width: 600px;
+}
+
+.table {
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+
+.table thead tr {
+    text-align: center;
+}
+
+.table td {
+    width: 10%;
+    text-align: left;
+}
+
+.tables tbody tr td:last-child,
+td:nth-last-child(2) {
+    text-align: right;
+}
+
+.emot-face .img-1 {
+    width: 135px;
+    height: 135px;
+}
+
+.emot-face .img-2 {
+    width: 100px;
+    height: 100px;
+}
+
+.content-card {
+    background-color: hsl(197, 16%, 91%);
+    margin-top: 10px;
+    /* border: black 1px solid; */
+    border-radius: 8px;
+    padding: 64px;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 20px 1px 15px rgba(85, 85, 85, 0);
+    box-shadow: 0px 10px 13px -7px #000000, 0px 20px 1px 15px rgba(85, 85, 85, 0);
+}

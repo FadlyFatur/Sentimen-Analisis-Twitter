@@ -1,0 +1,12 @@
+RUN
+// jika env tidak mau muncul
+Set-ExecutionPolicy Unrestricted -Scope Process
+
+//cara run env 
+env/Scripts/activate
+
+//cara run aplikasi
+python app.py / flask run
+
+> $env:FLASK_ENV = "development"
+> flask run
