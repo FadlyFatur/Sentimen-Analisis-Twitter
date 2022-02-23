@@ -1,3 +1,6 @@
+Dijalankan didalam enviroment python
+Instal Requirement.txt
+
 RUN
 // jika env tidak mau muncul
 Set-ExecutionPolicy Unrestricted -Scope Process
@@ -6,7 +9,5 @@ Set-ExecutionPolicy Unrestricted -Scope Process
 env/Scripts/activate
 
 //cara run aplikasi
-python app.py / flask run
-
-> $env:FLASK_ENV = "development"
-> flask run
+$env:FLASK_ENV = "development"
+flask run
